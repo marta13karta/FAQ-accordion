@@ -72,9 +72,12 @@ body {
             }
           }
           .answer {
-            display: none;
             color: $grayish-purple;
             line-height: 1.5;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+            max-height: 0;
           }
           &.active {
             .question {
@@ -82,6 +85,8 @@ body {
             }
             .answer {
               display: block !important;
+              max-height: 300px;
+              opacity: 1;
             }
           }
         }
